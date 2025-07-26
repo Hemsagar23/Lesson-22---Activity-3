@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sum and Trigonometry</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #444;
+        }
+
+        strong {
+            color: #0077cc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Sum & Trigonometric Values</h1>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // Constants
+        const numbers = [30, 20, 10];
+        const angleDeg = 60;
+
+        // Sum Function
+        function sumValues(arr) {
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+            return sum;
+        }
+
+        // Degree to Radian conversion
+        function toRadians(deg) {
+            return deg * (Math.PI / 180);
+        }
+
+        // Calculations
+        const sum = sumValues(numbers);
+        const rad = toRadians(angleDeg);
+        const sinVal = Math.sin(rad).toFixed(4);
+        const cosVal = Math.cos(rad).toFixed(4);
+        const tanVal = Math.tan(rad).toFixed(4);
+
+        // Output
+        document.getElementById("result").innerHTML = `
+      <p><strong>Numbers:</strong> ${numbers.join(', ')}</p>
+      <p><strong>Sum:</strong> ${sum}</p>
+      <p><strong>Angle:</strong> ${angleDeg}°</p>
+      <p><strong>sin(${angleDeg}°):</strong> ${sinVal}</p>
+      <p><strong>cos(${angleDeg}°):</strong> ${cosVal}</p>
+      <p><strong>tan(${angleDeg}°):</strong> ${tanVal}</p>
+    `;
+    </script>
+
+</body>
+
+</html>
